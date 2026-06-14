@@ -1,0 +1,23 @@
+# AIPG Validator Node — systemd unit.
+# Install:
+#   sudo cp aipg-validator.service /etc/systemd/system/
+#   # edit User= and WorkingDirectory= below to match your checkout
+#   sudo systemctl daemon-reload && sudo systemctl enable --now aipg-validator
+# Logs:  journalctl -u aipg-validator -f
+[Unit]
+Description=AIPG Validator Node
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=CHANGEME
+WorkingDirectory=/home/CHANGEME/validator-node
+ExecStart=/home/CHANGEME/validator-node/.venv/bin/python -m validator.cli run
+Restart=always
+RestartSec=10
+# Don't leak the private key into the journal beyond what we log.
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

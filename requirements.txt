@@ -1,0 +1,9 @@
+httpx>=0.27
+python-dotenv>=1.0
+# Image/video validation (structural + perceptual-hash consensus) — CPU-only, light:
+Pillow>=10.0
+ImageHash>=4.3
+# On-chain stake gate + attestation signing (only used once staking is live;
+# harmless to install now — pre-launch runs with VALIDATOR_REQUIRE_STAKE=false):
+web3>=6.15
+eth-account>=0.11
