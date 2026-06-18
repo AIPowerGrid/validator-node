@@ -32,7 +32,7 @@ concrete detail in children. Delete stale notes instead of explaining history.
 
 ---
 
-# validator-node — proactive grid health validator
+# grid-validator — proactive grid health validator
 
 ## Purpose
 
@@ -56,7 +56,7 @@ and video on a small always-on box. Python package: `validator/`. Entry: `valida
 ## Local Contracts
 
 - **Inherit org engineering standards:** /Users/j/fix-axios-vuln/aipg-documentation/engineering-standards/
-  (core + git + the matching language file). The rules below are validator-node specializations.
+  (core + git + the matching language file). The rules below are grid-validator specializations.
 - **Early-stage / v0:** the grid does not yet expose targeted probing (`POST /v1/validator/probe`),
   the worker list (`GET /v1/validator/workers`), the attestation sink (`POST /v1/validator/attest`),
   or the `ValidatorStaking` contract. The node is written so each is best-effort: missing
